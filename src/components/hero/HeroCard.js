@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const HeroCard = ({
+const heroImages = require.context("../assets", true);
+
+export const HeroCard = ({
   id,
   superhero,
   publisher,
@@ -8,7 +10,7 @@ const HeroCard = ({
   first_appearance,
   characters,
 }) => {
-  const imagePath = `/assets/${id}.jpg`;
+  const imagePath = heroImages(`./${ id }.jpg`);;
 
   return (
     <div className="col animate__animated animate__backInLeft">
@@ -27,12 +29,10 @@ const HeroCard = ({
               )}
 
               <p className="card-text">
-                <small className="text-muted">{ first_appearance }</small>
+                <small className="text-muted">{first_appearance}</small>
               </p>
 
-                <Link to={`/hero/${id}`}>
-                    Más...
-                </Link>
+              <Link to={`/hero/${id}`}>Más...</Link>
             </div>
           </div>
         </div>
