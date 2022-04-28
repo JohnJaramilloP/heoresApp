@@ -20,7 +20,7 @@ const HeroScreen = () => {
   const { id, superhero, publisher, alter_ego, first_appearance, characters } =
     hero;
 
-  const imagePath = heroImages(`./${ heroId }.jpg`);
+  const imagePath = heroImages(`./${ id }.jpg`);
 
   return (
     <div className="row mt-5 animate__animated animate__backInLeft">
